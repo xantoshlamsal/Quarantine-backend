@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('country','Api\CountryController');
 Route::get('municipality',['uses'=>'Api\MunicipalityController@index']);
+Route::get('municipality-active',['uses'=>'Api\MunicipalityController@activeMunicipalities']);
 Route::get('/country/{id}/province', ['uses' => 'Api\CountryController@provinces']);
 Route::get('/province/{id}/district', ['uses' => 'Api\ProvinceController@districts']);
 Route::get('/district/{id}/palika', ['uses' => 'Api\DistrictController@palikas']);

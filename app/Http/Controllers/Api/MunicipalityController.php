@@ -18,6 +18,10 @@ class MunicipalityController extends Controller
         return Municipality::all();
     }
 
+    public function activeMunicipalities(){
+        return Municipality::where('active_status',true)->get();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
